@@ -16,6 +16,10 @@ func main() {
 
 	fmt.Println("DAY2 Start ... ")
 
+	// Variables and Integer
+	// String and Const
+	// message
+
 	var variableTypeBoolean = true
 	var variableTypeInteger = 6
 	variableTypeFloat := 1.25
@@ -93,4 +97,160 @@ func main() {
 	}
 
 	fmt.Println("- End My Training Day#1 -")
+
+	fmt.Println(" \n ")
+
+	fmt.Println("- Start My Training Day#2 -")
+
+	//  if <condition <Valuse>> <Decide> {
+	//   < Code Worker >
+	//   } else if {
+	//   < Code Worker >
+	//   else { 
+	//   < Code Worker >
+	//  }
+
+	if 10 - 5 == 5 {
+		fmt.Println(" Condition is true. ")
+	} else {
+		fmt.Println(" Condition is false. ")
+	}
+
+	if applause := 10; applause <= 3 {
+		fmt.Println(" Cool!! ")
+	} else {
+		fmt.Println(" Awesome!! ")
+	}
+	fmt.Println("----------------------- \n ")
+
+	// Switch < Condition < Values >>; < Variables >
+	// Case < Variables Values > 
+	// < Code Worker >
+	// < Fallthough >
+	// Default:
+	// < Code Worker >
+
+
+	// method 1
+	n := 2
+	fmt.Println(" Write ",n," as ")
+	switch n {
+	case 1:
+		fmt.Println("one")
+	case 2:
+		fmt.Println("two")
+	case 3:
+		fmt.Println("three")
+	}
+
+	// method 2 fallthrough will not exit switch.It will continue case
+	k := 3
+	switch k {
+	case 3:
+		fmt.Println("three")
+		fallthrough
+	case 2:
+		fmt.Println("two")
+		fallthrough
+	case 1:
+		fmt.Println("one")
+		fallthrough
+	default:
+		fmt.Println(" Go!!! ")
+	}
+
+	fmt.Println("----------------------- \n ")
+
+// method 3
+	app := 10
+	switch {
+	case app <= 3:
+		fmt.Println(" Good! ")
+	case app <= 5:
+		fmt.Println(" Cool! ")
+	default:
+		fmt.Println(" Awesome!! ")
+	}
+
+	fmt.Println("----------------------- \n ")
+	fmt.Println("  Arrays Training \n ")
+
+	// var < Array Name > [<Array Scaling>] < Type of Array >
+	//     < Array Name > := [<Array Scaling>] <Type of Array> {<mention Values>}
+	//
+	//     < Array Name > [<Array Scaling> <Array Scaling>]<Type of Array>
+
+	var a[3]int
+	b := [5]int{5, 5, 5, 5}
+
+	a[0] = 1
+	a[1] = 2
+	a[2] = 3
+	fmt.Println(" Length of an array a: ",len(a))
+	fmt.Println(" Values of an array a: ", a[0], a[1], a[2])
+	fmt.Println(" Values of an array b: ",b)
+
+	var twoD [2][3]int
+	for g :=0; g < 2; g++ {
+		for o := 0; o < 3; o++ {
+			twoD[g][o] = g + o
+		}
+	}
+	fmt.Println(" 2nd arrays: ", twoD)
+
+	fmt.Println("  ----------------------- \n ")
+	fmt.Println("  Slice Training \n ")
+
+	// <Slice Name> := make([] <type of Slice>, <default Values>)
+	// <Slice Name> := []string{<default Values>, <default Values>}
+
+	c := make([]string, 3)
+
+	c[0] = "a"
+	c[1] = "b"
+	c[2] = "c"
+	fmt.Println(" Length of slice c: ", len(c))
+	fmt.Println(" Values of slice c: ", c[0], c[1], c[2])
+	fmt.Println("  ----------------------- \n ")
+
+	// more info : https://blog.golang.org/go-slices-usage-and-internals
+	
+	// <Slice Name>[<default position>:<end position>]
+	
+	e := []string{"a", "b", "c"}
+	f := make([]string, len(e))
+	copy(f, e)
+	f = append(f, "d", "e")
+
+	fmt.Println(" Value of slice e: ", e)
+	fmt.Println(" Value of slice f: ", f)
+
+	h := f[0:len(f)]
+	fmt.Println(" Value of slice h: ", h)
+	fmt.Println(" ---- Mutate Value of C ---- ")
+	h[0] = "x"
+
+	fmt.Println(" Value of slice h: ", h)
+	fmt.Println(" Value of slice f: ", f)
+
+	fmt.Println("  ----------------------- \n ")
+
+	q := []string{"a", "b", "c", "d", "e"}
+	w := q[0:5]
+	v := q[:5]
+	r := q[0:]
+	t := q[:]
+
+	fmt.Println(" Value of slice q: ",q)
+	fmt.Println(" Value of slice w: ",w)
+	fmt.Println(" Value of slice v: ",v)
+	fmt.Println(" Value of slice r: ",r)
+	fmt.Println(" Value of slice t: ",t)
+
+	fmt.Println("  ----------------------- \n ")
+	p := q[2:4]
+	fmt.Println(" Value of slice p: ", p)
+
+	fmt.Println("  ----------------------- \n ")
+
 }

@@ -253,4 +253,61 @@ func main() {
 
 	fmt.Println("  ----------------------- \n ")
 
+	// <maps's name> := make[(map<type of key>]<type of Value>)
+	// <maps's name> := map[<type of key>]<type of Values>{<key>: <key>,...}
+
+	Amap := make(map[string]int)
+	Amap["math"] = 85
+	Amap["sci"] = 92
+	Amap["com"] = 28
+	fmt.Println("Length of maps Amap: ",len(Amap))
+	fmt.Println(" Values of Maps Amap: ", Amap)
+
+	fmt.Println("  -----------End Mapping Mathod#1 ------------ \n ")
+	fmt.Println("  -----------Start Mapping Mathod#2 ------------ \n ")
+
+	Bmap := map[string]int{"math": 90,"sci": 90,"com": 100}
+	fmt.Println(" Value of Maps Bmap: ",Bmap)
+	delete(Bmap,"math")
+	fmt.Println(" Delete math from map Bmap. ")
+	fmt.Println(" Value of Map Bmap: ", Bmap)
+
+	values, prs := Bmap["math"]
+	fmt.Println(" State of math: ",prs)
+	fmt.Println(" Value if math: ",values)
+
+	fmt.Println("  ----------------------- \n ")
+	if values, prs := Bmap["math"]; prs {
+		fmt.Println(" Value of math: ", values)
+	}
+	if values, prs := Bmap["com"]; prs {
+		fmt.Println(" Value of com: ", values)
+	}
+
+	fmt.Println("  ----------------------- \n ")
+	fmt.Println("  -----------Start Mapping Mathod#3 ------------ \n ")
+
+	a = [3]int{1, 2, 3}
+	s := []int{1, 2, 3}
+	m := map[string]int{"a": 1,"b": 2,"c": 3 }
+	fmt.Println("  Value of l,s,u: ", a ,s, m)
+
+	fmt.Println("  ----------------------- \n ")
+	for i,num := range a {
+		fmt.Println(i,num)
+	}
+	
+	fmt.Println("  ----------------------- \n ")
+	for i,num := range s {
+		fmt.Println(i,num)
+	}
+
+	fmt.Println("  ----------------------- \n ")
+	for i,num := range m {
+		fmt.Println(i,num)
+	}
+
+	fmt.Println("  ----------- End Map Method ------------ \n ")
+	fmt.Println("  ----------- End Day#3 Training ------------ \n ")
 }
+

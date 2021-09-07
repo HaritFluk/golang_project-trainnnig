@@ -2,6 +2,22 @@ package main
 
 import "fmt"
 
+
+// func <Function Name> (<Variable Value> <Type Input Value>) <Type of Variable output> {
+// ...
+// <Code Working>
+// ...
+// return <Result>
+// }
+
+func plus(num1 int, num2 int) int {
+	return num1 + num2
+}
+
+func prism(length, width, height int) int  {
+	return length * width * height
+}
+
 func intit() {
 	fmt.Println("Init ... ")
 }
@@ -309,5 +325,22 @@ func main() {
 
 	fmt.Println("  ----------- End Map Method ------------ \n ")
 	fmt.Println("  ----------- End Day#3 Training ------------ \n ")
+
+	fmt.Println("  ----------- Start Day#4 Function ------------ \n ")
+
+	num1, num2 := 1, 2
+	res := plus(num1, num2)
+	fmt.Println(" 1 + 2 =", res)
+
+	res = prism(4, 2, 2)
+	fmt.Println(" Rectangular prism =", res)
+
+
+	
+
+	fmt.Println("  ----------------------- \n ")
+	fmt.Println("  ----------- End Day#4 Function ------------ \n ")
+
 }
+
 

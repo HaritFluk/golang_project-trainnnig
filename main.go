@@ -1,7 +1,8 @@
 package main
 
-import "fmt"
-
+import (
+	"fmt"
+)
 
 // func <Function Name> (<Variable Value> <Type Input Value>) <Type of Variable output> {
 // ...
@@ -16,6 +17,48 @@ func plus(num1 int, num2 int) int {
 
 func prism(length, width, height int) int  {
 	return length * width * height
+}
+
+func findFirstAndLast(msg string) (string, string) {
+	return string(msg[0]), string(msg[len(msg)-1])
+}
+
+func swap(x, y int) (str1, str2 int) {
+	str1 = y
+	str2 = x
+	return
+}
+
+func sum(nums ...int) {
+	fmt.Print(nums, " = ")
+	total := 0
+	for _, num := range nums {
+		total += num
+	}
+	fmt.Println(" Total is ", total)
+}
+
+func fact(n int) int  {
+	if n == 0 {
+		return 1
+	}
+	return n * fact(n-1)
+}
+
+func factUsingFor(n int) int {
+	factorial := 1
+	for i := 1; i <= n; i++ {
+		factorial *= 1
+	}
+	return factorial
+}
+
+func intSeq() func() int {
+	i := 0
+	return func() int {
+		i++
+		return i
+	}	
 }
 
 func intit() {
@@ -35,6 +78,7 @@ func main() {
 	// Variables and Integer
 	// String and Const
 	// message
+	fmt.Println("---------- Type of Values ---------")
 
 	var variableTypeBoolean = true
 	var variableTypeInteger = 6
@@ -340,7 +384,46 @@ func main() {
 
 	fmt.Println("  ----------------------- \n ")
 	fmt.Println("  ----------- End Day#4 Function ------------ \n ")
+	fmt.Println("  ----------------------- \n ")
+	fmt.Println("  ----------- End Day#4 Function ------------ \n ")
+
+	aa, bb := findFirstAndLast("Hello Gopher")
+	fmt.Println(aa, bb)
+
+	str3, str4 := 0, 1
+	str3, str4 = swap(str3, str4)
+	fmt.Println(str3, str4)
+
+	fmt.Println(" ------ Continue Day#5 ------ ")
+	fmt.Println(" ---------------------------- ")
+
+	numberic := []int{1, 2, 3, 4, 5}
+
+	sum(1, 2)
+	sum(1, 2, 3)
+	sum(numberic[0:4] ... )
+	sum(numberic ... )
+
+	fmt.Println(" ---------------------------- ")
+	fmt.Println(" -------- Closures --------- ")
+
+	nextInt := intSeq()
+
+	fmt.Println(nextInt())
+	fmt.Println(nextInt())
+	fmt.Println(nextInt())
+	fmt.Println(" ---------------------------- ")
+	
+	newInts := intSeq()
+	fmt.Println(newInts())
+
+	fmt.Println(" -------- End Closures -------- ")
+	fmt.Println(" -------- Recursion --------- ")
+	fmt.Println(fact(10))
+	fmt.Println(factUsingFor(10))
+	fmt.Println(" ---------------------------- ")
 
 }
+
 
 
